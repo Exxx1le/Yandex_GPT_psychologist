@@ -1,11 +1,13 @@
 from dataclasses import dataclass
 from typing import Type
+
 from environs import Env
 
 
 @dataclass
 class ConfigItem:
     """Base class for configuration items."""
+
     pass
 
 
@@ -53,13 +55,11 @@ def load_config(config_class: Type[ConfigItem], env_key: str, path: str | None =
 
 def load_bot_config(path: str | None = None) -> BotConfig:
     """Loads the Telegram Bot configuration."""
-    tg_bot = load_config(TgBot, 'BOT_TOKEN', path)
+    tg_bot = load_config(TgBot, "BOT_TOKEN", path)
     return BotConfig(tg_bot=tg_bot)
 
 
 def load_yandex_config(path: str | None = None) -> YandexConfig:
     """Loads the Yandex Assistant configuration."""
-    yandex_assistant = load_config(YandexAssistant, 'YANDEX_FOLDER', path)
+    yandex_assistant = load_config(YandexAssistant, "YANDEX_FOLDER", path)
     return YandexConfig(folder_config=yandex_assistant)
-
-
