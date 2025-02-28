@@ -1,11 +1,8 @@
-import os
-from pathlib import Path
 import asyncio
-from aiogram import Bot, Dispatcher, F
+
+from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
-from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import State, StatesGroup
-from aiogram.types import BotCommand, BotCommandScopeDefault, CallbackQuery, FSInputFile, Message
+from aiogram.types import BotCommand, BotCommandScopeDefault, Message
 
 from config import load_bot_config
 
